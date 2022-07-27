@@ -9,23 +9,23 @@
 
 def simple_separator():
     """
-    Функция создает красивый резделитель из 10-и звездочек (**********)
-    :return: **********
+     Функция создает красивый резделитель из 10-и звездочек (**********)
+     : возврат: **********
     """
-    pass
+    return '*' * 10
 
 
 print(simple_separator() == '**********')  # True
 
 
 def long_separator(count):
+
     """
     Функция создает разделитель из звездочек число которых можно регулировать параметром count
     :param count: количество звездочек
     :return: строка разделитель, примеры использования ниже
     """
-    pass
-
+    return '*' * count
 
 print(long_separator(3) == '***')  # True
 print(long_separator(4) == '****')  # True
@@ -38,7 +38,7 @@ def separator(simbol, count):
     :param count: количество повторений
     :return: строка разделитель примеры использования ниже
     """
-    pass
+    return simbol*count
 
 
 print(separator('-', 10) == '----------')  # True
@@ -55,7 +55,7 @@ def hello_world():
     ##########
     :return: None
     """
-    pass
+    print('*' * 10 + '\n\n' + 'Hello World!' + '\n\n' + '#' * 8)
 
 
 '''
@@ -79,7 +79,7 @@ def hello_who(who='World'):
     :param who: кого мы приветствуем, по умолчанию World
     :return: None
     """
-    pass
+    print('*' * 10 + '\n\n' + f'Hello {who}!' + '\n\n' + '#' * 8)
 
 
 '''
@@ -115,7 +115,7 @@ def pow_many(power, *args):
     :param args: любое количество цифр
     :return: результат вычисления # True -> (1 + 2)**1
     """
-    pass
+    return sum(args) ** power
 
 
 print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
@@ -126,15 +126,16 @@ print(pow_many(2, 1, 2, 3, 4) == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 
 
 
 def print_key_val(**kwargs):
+
     """
-    Функция выводит переданные параметры в фиде key --> value
+    Функция выводит переданные параметры в виде key --> value
     key - имя параметра
     value - значение параметра
     :param kwargs: любое количество именованных параметров
     :return: None
     """
-    pass
-
+    for key, value in kwargs.items():
+        print("{} --> {}".format(key, value))
 
 """
 name --> Max
@@ -148,7 +149,9 @@ is_animal --> True
 print_key_val(animal='Cat', is_animal=True)
 
 
+
 def my_filter(iterable, function):
+
     """
     (Усложненое задание со *)
     Функция фильтрует последовательность iterable и возвращает новую
@@ -158,7 +161,7 @@ def my_filter(iterable, function):
     :param function: функция фильтрации
     :return: новая отфильтрованная последовательность
     """
-    pass
+    return list(filter(function, iterable))
 
 
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
